@@ -38,9 +38,9 @@ class Board:
 
                 # Sets tile colour and creates rect object for tile
                 if ((row + col) %2) == 1:
-                    new_tile.set_colour(pygame.Color(100, 40, 0))
-                else:
                     new_tile.set_colour(pygame.Color(255,255,255))
+                else:
+                    new_tile.set_colour(pygame.Color(0,0,0))
                 new_tile.set_rect(Rect(left, top, square_size, square_size))
 
                 # Checks if a stone should be on this tile and what color it should be

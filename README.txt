@@ -45,6 +45,7 @@ References:
 
 Pygame was used in the development of this app. More information on pygame can be found
 at: https://www.pygame.org/news
+Pygame license can be found at: https://www.pygame.org/docs/LGPL.txt
 Documentation was referened in the development of this app at: https://www.pygame.org/docs/
 
 #########################################################################################

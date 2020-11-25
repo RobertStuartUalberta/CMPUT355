@@ -7,14 +7,8 @@ import config
 def main():
     try:
         if config.config():
-            window_width = 400
-            window_height = 400
-            title = "Checkers"
-            board_dimension = 8
-            game = Game(title, window_width, window_height, board_dimension)
+            game = Game("Checkers", 600, 600, 8)
             MenuScreen.open_menu_screen(game)
-
-            #Checkers.play_checkers(game)
         else:
             input("Above packages are missing. Press enter to close window.")
 

@@ -10,19 +10,19 @@ from app.Helpers.HandleClick import handle_click
 def play_checkers(game):
     quit = False
     window = game.get_window()
-    game_board = Board(game.get_game_board_dimensions(), window)
+    game_board = Board(game.get_game_board_dimensions(), window, game)
     #game_board.draw_board(window)
-    while quit is False:
+    while quit is False and game_board.game_over == False:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return True
             else:
                 window.update()
-                handle_event(event, game_board)
+                handle_event(event, game_board, game)
 
-def handle_event(event, game_board):
+def handle_event(event, game_board, game):
     if event.type == pygame.MOUSEBUTTONUP:
         position = pygame.mouse.get_pos()
-        handle_click(game_board, position)
+        game.handle_click(game_board, position)
         game_board.draw_board()
 

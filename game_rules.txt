@@ -1,9 +1,9 @@
-Welcome to the game of checkers. The game begins with Black to play.
-From there players take turns moving their stones. Each turn a player can
-complete one of two actions. 1: The current player may move a stone one diagonal
-coordinate toward their opponents side. 2: The current player may "capture" an
-opponents stone if that stone occupies a diagonal coordinate in the appropriate
-direction, and the subsequent diagonal coordinate is free. If after capturing a stone
-another stone can be captured by that same stone the player may do so. If either player
-gets a stone to the opponents side of the board, that stone becomes a "King" and may now
-move in both directions. The game ends when one player has captured all of the opponents stones.
+Welcome to the game of checkers. 
+The game begins with Black to play.
+Players take turns moving their stones in one of two possible ways.
+1: A player may move their stone diagonally one space so long as that space is empty and the direction is valid
+2: A player may "capture" an opponents stone given the opponents stone occupies a valid move space and the subsequent space is empty.
+The direction a player may move is initially toward the opponents side. 
+If a player manages to get one of their stones across the board to the first row of the opponents side, that stone becomes a "king" and can now move in both directions.
+In the case that a players stone captures an opponents stone, if that stone can immidiately capture another stone it may do so (this rule can stack for tripple and large captures)
+The game ends when one player has captured all of the opponents stones, or a player concedes on their turn.

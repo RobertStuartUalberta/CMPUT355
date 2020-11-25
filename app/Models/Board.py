@@ -3,10 +3,11 @@ from app.Models.Tile import Tile
 from app.Models.Stone import Stone
 from app.Models.Player import Player
 from pygame.locals import*
+import app.Views.MenuScreen as MenuScreen
 
 class Board:
     # Creates new game board
-    def __init__(self, size, window):
+    def __init__(self, size, window, game):
         self.size = size
         self.board = list()
         self.window = window
@@ -18,6 +19,11 @@ class Board:
         self.generate_board()
         self.fill_board()
         self.draw_board()
+        self.game = game
+        self.game_over = False
+
+    def get_game(self):
+        return self.game
     
     def generate_board(self):
         for row in range(self.get_size()):
@@ -93,8 +99,33 @@ class Board:
     def get_turn_number(self):
         return self.turn_number
     
+    def game_over(self):
+        return self.game_over
+    
     def update_turn_number(self):
         self.turn_number += 1
+        winner, game_over = self.check_winner()
+        if game_over:
+            self.game_over = True
+            MenuScreen.show_end_screen(self.get_window(), winner, self.get_game())
+    
+    def check_winner(self):
+        red = 0
+        black = 0
+        board = self.get_board()
+        for row in board:
+            for tile in row:
+                if tile.get_stone() != None:
+                    if tile.get_stone().get_colour_string() == "Red":
+                        red += 1
+                    else:
+                        black += 1
+        if red == 0:
+            return "Black", True
+        elif black == 0:
+            return "Red", True
+        else:
+            return None, False
 
     def draw_board(self):
         board = self.get_board()

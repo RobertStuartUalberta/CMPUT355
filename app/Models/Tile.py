@@ -129,6 +129,12 @@ class Tile:
             outline_colour = pygame.Color(255, 255, 0)
             pygame.draw.circle(window.get_surface(), outline_colour, centre, (radius + 2))
         pygame.draw.circle(window.get_surface(), circle_colour, centre, radius)
+        if self.get_stone().is_king():
+            king_font = pygame.font.Font(None, radius)
+            king = king_font.render("K", True, (255, 255, 255))
+            king_size = king_font.size("K")
+            king_coords = ((centre[0] - (king_size[0]//2)), (centre[1] - (king_size[1]//2)))
+            window.get_window().blit(king, king_coords)
         
 
 

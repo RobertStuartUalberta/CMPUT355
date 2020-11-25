@@ -4,7 +4,6 @@ from app.Views.Window import Window
 from app.Models.Board import Board
 from app.Models.Game import Game
 from pygame.locals import*
-from app.Helpers.HandleClick import handle_click
 import app.Views.MenuScreen as MenuScreen
 
 

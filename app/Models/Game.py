@@ -28,25 +28,36 @@ class Game:
                 self.move_stone_and_update(clicked, capture, selected_tile, game_board)
             elif game_board.can_change_tile():
                 self.stone_select(game_board, position, turn)
+            elif selected_tile.get_rect().collidepoint(position):
+                selected_tile.set_outlined(False)
+                game_board.set_selected_tile(None)
+                game_board.set_can_change_tile(True)
+                game_board.update_turn_number()
+
         else:
             self.stone_select(game_board, position, turn)
 
     def move_stone_and_update(self, clicked, capture, selected_tile, game_board):
         if type(selected_tile.check_move(clicked)) == bool:
             if selected_tile.check_move(clicked):
-                clicked.set_stone(selected_tile.get_stone())
-                selected_tile.set_stone(None)
-                selected_tile.set_outlined(False)
-                game_board.set_selected_tile(None)
-                game_board.set_can_change_tile(True)
+                if capture != None or selected_tile.get_stone().can_capture_only() == False:
+                    clicked.set_stone(selected_tile.get_stone())
+                    clicked.get_stone().set_capture_only(False)
+                    selected_tile.set_stone(None)
+                    selected_tile.set_outlined(False)
+                    game_board.set_selected_tile(None)
+                    game_board.set_can_change_tile(True)
+                    game_board.update_turn_number()
                 if capture != None:
                     capture.set_stone(None)
                     if self.can_capture_again(clicked, game_board):
+                        game_board.update_turn_number()
                         game_board.set_selected_tile(clicked)
+                        clicked.get_stone().set_capture_only(True)
                         game_board.set_can_change_tile(False)
                         clicked.set_outlined(True)
                         return
-                game_board.update_turn_number()
+                
         else:
             game_board.set_selected_tile(selected_tile.check_move(clicked))
 
@@ -54,7 +65,7 @@ class Game:
         clicked_neighbours = clicked.get_neighbours()
         for neighbour in clicked_neighbours:
             if neighbour.is_captureable(game_board):
-                if clicked.check_direction(neighbour.get_coords_for_capture()):
+                if clicked.check_direction(neighbour.get_coords_for_capture(), False):
                     return True
         return False
 

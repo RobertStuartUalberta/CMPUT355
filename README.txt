@@ -5,6 +5,8 @@ Developer: Robert Stuart
 Developed for: CMPUT 355 Assignment 4 (University of Alberta)
 Dependencies: pygame (pip install pygame)
 
+Icon made by Freepik (https://www.flaticon.com/authors/freepik) from Flaticon (https://www.flaticon.com/)
+
 Description:
 
 This app is a basic Visualizer/Player for the game of Checkers. To start the game,
@@ -16,26 +18,28 @@ use to launch the add depends on the setup of your indiviaul machine.
 
 Checkers Rules:
 
-The game involves two players playing the game of checkers, taking turns making moves.
+The game begins with Black to play.
+Players take turns moving their stones in one of two possible ways.
 
-The game begins on blacks turn and players then alternate by moving pieces one space
-diagonally. 
+1: A player may move their stone diagonally one space so long as that space is empty and the 
+direction is valid
 
-If an opponents piece occupies the space directly in the path of a players piece, 
-and the subsequent space following the opponents piece is empty, a player may "jump" 
-the opponents piece, capturing it and removing it from play. 
+2: A player may "capture" an opponents stone given the opponents stone occupies a valid move 
+space and the subsequent space is empty.
 
-Typically after one move it would become the other players turn. However, in the case 
-of a capture, if another capture is possible with the same piece the player may do so. 
-Alternatively, they can choose to end their turn. No other pieces can be moved in this 
-situation, only the initial piece used to capture. 
+The direction a player may move is initially toward the opponents side. 
 
-Initially players may only move in the direction directly away from their starting side. 
-However, if a player manages to reach their opponents side that piece becomes a "king" 
-designated by the letter "K" and may movein both directions. 
+If a player manages to get one of their stones across the board to the first row of the opponents 
+side, that stone becomes a "king" and can now move in both directions.
 
-The game ends when one player has cleared the board of the opponentspieces, or the opponent 
-forfeits. 
+In the case that a players stone captures an opponents stone, if that stone can immidiately capture 
+another stone it may do so (this rule can stack for tripple and large captures)
+
+When a double (or higher) capture is possible, the capturing stone remains selected. If the player 
+would like to end their turn and not capture again they simply click the stone again to end their turn. 
+
+The game ends when one player has captured all of the opponents stones, or a player concedes on their 
+turn.
 
 References:
 

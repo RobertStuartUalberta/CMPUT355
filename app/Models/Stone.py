@@ -7,6 +7,13 @@ class Stone:
         self.king = False
         self.captured = False
         self.circle = None
+        self.capture_only = False
+    
+    def can_capture_only(self):
+        return self.capture_only
+    
+    def set_capture_only(self, capture_only):
+        self.capture_only = capture_only
 
     def get_position(self):
         return self.position

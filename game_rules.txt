@@ -6,4 +6,5 @@ Players take turns moving their stones in one of two possible ways.
 The direction a player may move is initially toward the opponents side. 
 If a player manages to get one of their stones across the board to the first row of the opponents side, that stone becomes a "king" and can now move in both directions.
 In the case that a players stone captures an opponents stone, if that stone can immidiately capture another stone it may do so (this rule can stack for tripple and large captures)
+When a double (or higher) capture is possible, the capturing stone remains selected. If the player would like to end their turn and not capture again they simply click the stone again to end their turn. 
 The game ends when one player has captured all of the opponents stones, or a player concedes on their turn.

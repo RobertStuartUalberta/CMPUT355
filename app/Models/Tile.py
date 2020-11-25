@@ -85,7 +85,7 @@ class Tile:
     def check_move(self, new_tile):
         new_coords = new_tile.get_coords()
         if self.check_not_owned(new_tile):
-            if self.check_direction(new_coords):
+            if self.check_direction(new_coords, True):
                 return True
         elif self.get_stone().get_colour_string() == new_tile.get_stone().get_colour_string():
             self.set_outlined(False)
@@ -93,7 +93,7 @@ class Tile:
             return new_tile
         return False
     
-    def check_direction(self, new_coords):
+    def check_direction(self, new_coords, moving):
         is_king = self.get_stone().is_king()
         coords = self.get_coords()
         direction = self.get_stone().get_direction()
@@ -102,12 +102,12 @@ class Tile:
         else:
             if direction == "Up":
                 if new_coords[0] < coords[0]:
-                    if new_coords[0] == 0:
+                    if new_coords[0] == 0 and moving:
                         self.get_stone().make_king()
                     return True
             elif direction == "Down":
                 if new_coords[0] > coords[0]:
-                    if new_coords[0] == 7:
+                    if new_coords[0] == 7 and moving:
                         self.get_stone().make_king()
                     return True
         return False

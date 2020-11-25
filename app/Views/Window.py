@@ -6,6 +6,8 @@ class Window:
     def __init__(self, name, width, height):
         self.dimensions = (width, height)
         self.window = pygame.display.set_mode((self.get_dimensions()))
+        icon = pygame.image.load("icon.png")
+        pygame.display.set_icon(icon)
         pygame.display.set_caption(name)
         pygame.display.flip()
         self.surface = pygame.display.get_surface()

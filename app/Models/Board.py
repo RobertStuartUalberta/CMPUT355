@@ -102,6 +102,9 @@ class Board:
     def game_over(self):
         return self.game_over
     
+    def set_game_over(self, game_over):
+        self.game_over = game_over
+    
     def update_turn_number(self):
         self.turn_number += 1
         winner, game_over = self.check_winner()

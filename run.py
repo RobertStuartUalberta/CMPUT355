@@ -7,7 +7,7 @@ import config
 def main():
     try:
         if config.config():
-            game = Game("Checkers", 600, 600, 8)
+            game = Game("Checkers", 600, 700, 8)
             MenuScreen.open_menu_screen(game)
         else:
             input("Above packages are missing. Press enter to close window.")

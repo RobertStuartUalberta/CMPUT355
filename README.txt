@@ -9,7 +9,7 @@ Icon made by Freepik (https://www.flaticon.com/authors/freepik) from Flaticon (h
 
 Description:
 
-This app is a basic Visualizer/Player for the game of Checkers. To start the game,
+This app is a basic Visualizer for the game of Checkers. To start the game,
 execute the python3 file run.py. This can typically be achieved by running the 
 command "python3 run.py" or "run.py" from the directory it is
 stored in. Note, all files must be present in the directory with run.py, especially

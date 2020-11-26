@@ -107,6 +107,8 @@ class Board:
     
     def update_turn_number(self):
         self.turn_number += 1
+    
+    def game_over_check(self):
         winner, game_over = self.check_winner()
         if game_over:
             self.game_over = True

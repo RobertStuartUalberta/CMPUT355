@@ -36,6 +36,7 @@ class Game:
 
         else:
             self.stone_select(game_board, position, turn)
+        game_board.game_over_check()
 
     def move_stone_and_update(self, clicked, capture, selected_tile, game_board):
         if type(selected_tile.check_move(clicked)) == bool:
